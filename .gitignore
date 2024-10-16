@@ -1,0 +1,48 @@
+# Cache e Build Frontend
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/public/mix-manifest.json
+/public/css/
+/public/js/
+
+# Cache e Logs do Laravel
+/storage/*.key
+/storage/logs
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/views
+/storage/framework/testing
+/storage/pail
+
+# Dependências
+/vendor
+
+# Arquivos Sensíveis e de Configuração
+.env
+.env.backup
+.env.production
+auth.json
+
+# Arquivos Temporários e de Debug
+npm-debug.log
+yarn-error.log
+composer.lock.bak
+
+# Configurações de IDEs e Ferramentas
+/.fleet
+/.idea
+/.vscode
+/.zed
+
+# Configurações de Ferramentas de Desenvolvimento
+.phpactor.json
+.phpunit.result.cache
+/.phpunit*
+
+# Arquivos de Configuração de Deploy (Opcional)
+/Homestead.json
+/Homestead.yaml
+vapor.yml
+forge.yml
