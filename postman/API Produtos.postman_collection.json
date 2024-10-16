@@ -1,0 +1,318 @@
+{
+	"info": {
+		"_postman_id": "1579a1f0-7127-4e38-868e-6f68533aa7f8",
+		"name": "API Produtos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39037263"
+	},
+	"item": [
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|AeJsFa5UtWvoGSoSb5woAnQmUjRwu1DwLlT3eLPz6491831f",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/api-produtos/public/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api-produtos",
+								"public",
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cadastro",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Davi\",\r\n    \"email\": \"davi@email.com\",\r\n    \"password\": \"666\",\r\n    \"password_confirmation\": \"666\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api-produtos/public/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api-produtos",
+								"public",
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"davi@email.com\",\r\n    \"password\": \"666\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api-produtos/public/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api-produtos",
+								"public",
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|tdaDXDIarnCX2YMjzFAXjfyjNG0AqrqDXEahzkLz7dd7e31b",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/api-produtos/public/api/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api-produtos",
+								"public",
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "produtos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/api-produtos/public/api/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api-produtos",
+						"public",
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cria produto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Produto Exemplo 6\",\r\n    \"descricao\": \"Um produto de exemplo para testar o sistema 6\",\r\n    \"preco\": 9.99,\r\n    \"quantidade_em_estoque\": 692,\r\n    \"status\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api-produtos/public/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api-produtos",
+						"public",
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "produto pelo id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/api-produtos/public/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api-produtos",
+						"public",
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "atualiza produto",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Produto Exemplo 2 edit\",\r\n    \"descricao\": \"Um produto de exemplo para testar o sistema 2 edit\",\r\n    \"preco\": 29.99,\r\n    \"quantidade_em_estoque\": 692,\r\n    \"status\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api-produtos/public/api/products/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api-produtos",
+						"public",
+						"api",
+						"products",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleta produto",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/api-produtos/public/api/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api-produtos",
+						"public",
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
