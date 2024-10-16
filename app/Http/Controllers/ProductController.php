@@ -88,7 +88,7 @@ class ProductController extends Controller implements HasMiddleware
 
         // Retorna uma mensagem de sucesso
         return [
-            'mensagem' => 'Produto deletado'
+            'mensagem' => 'Produto deletado.'
         ];
     }
 }
