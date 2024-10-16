@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Http\Requests\StoreProductRequest;
-use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -13,15 +13,25 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return Product::all();
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreProductRequest $request)
+    public function store(Request $request)
     {
-        //
+        $fields = $request->validate([
+            'nome' => 'required|min:3',
+            'descricao' => 'nullable|max:255',
+            'preco' => 'required|numeric|min:0',
+            'quantidade_em_estoque' => 'required|integer|min:0',
+            'status' => 'required|boolean',
+        ]);
+
+        $product = Product::create($fields);
+
+        return $product;
     }
 
     /**
@@ -29,15 +39,26 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return $product;
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProductRequest $request, Product $product)
+    public function update(Request $request, Product $product)
     {
-        //
+        $fields = $request->validate([
+            'nome' => 'required|min:3',
+            'descricao' => 'nullable|max:255',
+            'preco' => 'required|numeric|min:0',
+            'quantidade_em_estoque' => 'required|integer|min:0',
+            'status' => 'required|boolean',
+        ]);
+
+        $product->update(($fields));
+
+        return $product;
+        
     }
 
     /**
@@ -45,6 +66,10 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return [
+            'mensagem' => 'Produto deletado'
+        ];
     }
 }
